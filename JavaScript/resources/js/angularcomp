@@ -1,0 +1,28 @@
+import { Injectable, Component, ViewEncapsulation } from '@angular/core';
+
+enum A {
+	COS,
+	INNE,
+	TAKIE
+};
+
+@Component({
+	selector: 'my-component',
+	template: requrire('./my-component.html'),
+	styles: [require('./my-component.sass')],
+	encapsulation: ViewEncapsilation.NONE;
+}
+class MyComponent {
+	constructor(
+		private pytania:Pytania
+	) {
+		this.pytania = pytania.dajPytania();
+	}
+}
+
+@Injectable()
+class Pytania {
+	public dajPytania():string[] {
+		return [1];
+	}
+}
